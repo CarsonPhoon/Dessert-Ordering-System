@@ -1,10 +1,8 @@
 <?php
-$host = "localhost";
-$user = "root";
-
-$pass = "root123";
-
-$dbname = "dessert_order_db";
+$host = "dessert-db.c24z8x36euba.us-east-1.rds.amazonaws.com";
+$user = "admin";
+$pass = "root1234";
+$dbname = "DessertDB";
 
 $port = 3306;
 
