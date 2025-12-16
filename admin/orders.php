@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set('Asia/Kuala_Lumpur'); 
 include '../db.php';
 
 // Check if user is admin
@@ -91,3 +92,4 @@ if (isset($_GET['delete'])) {
 </body>
 
 </html>
+
