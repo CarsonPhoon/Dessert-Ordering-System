@@ -76,7 +76,7 @@ if (isset($_GET['delete'])) {
                     <?php
                     echo date(
                         'd M Y, h:i A',
-                        strtotime($order['order_date'] . ' -8 hours')
+                        strtotime($order['order_date'])
                     );
                     ?>
                     </td>
@@ -99,6 +99,7 @@ if (isset($_GET['delete'])) {
 </body>
 
 </html>
+
 
 
 
