@@ -72,13 +72,7 @@ if (isset($_GET['delete'])) {
             ?>
                 <tr>
                     <td>#<?php echo $order['order_id']; ?></td>
-                    <td>
-                    <?php
-                    $date = new DateTime($order['order_date'], new DateTimeZone('UTC'));
-                    $date->setTimezone(new DateTimeZone('Asia/Kuala_Lumpur'));
-                    echo $date->format('d M Y, h:i A');
-                    ?>
-                    </td>
+                    <td><?php echo date('d M Y, h:i A', strtotime($order['order_date'])); ?></td>
                     <td><?php echo implode(', ', $items_list) ?: 'No items'; ?></td>
                     <td>RM <?php echo number_format($order['total_price'], 2); ?></td>
                     <td>
@@ -98,5 +92,6 @@ if (isset($_GET['delete'])) {
 </body>
 
 </html>
+
 
 
