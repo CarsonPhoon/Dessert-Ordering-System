@@ -74,10 +74,14 @@ if (isset($_GET['delete'])) {
                     <td>#<?php echo $order['order_id']; ?></td>
                     <td>
                     <?php
-                    echo date(
-                        'd M Y, h:i A',
-                        strtotime($order['order_date'])
-                    );
+                    // Create a Date object assuming the DB gave us UTC time
+                    $date = new DateTime($order['order_date'], new DateTimeZone('UTC'));
+
+                    // Convert that object to Kuala Lumpur time
+                    $date->setTimezone(new DateTimeZone('Asia/Kuala_Lumpur'));
+
+                    // Display it
+                    echo $date->format('d M Y, h:i A');
                     ?>
                     </td>
                     <td><?php echo implode(', ', $items_list) ?: 'No items'; ?></td>
@@ -99,6 +103,7 @@ if (isset($_GET['delete'])) {
 </body>
 
 </html>
+
 
 
 
